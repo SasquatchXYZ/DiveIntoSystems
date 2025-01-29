@@ -13,3 +13,4 @@ add_executable(LValuesDemo Chapter1/lvalues_demo.c)
 add_executable(StructsToFunctions Chapter1/passing_structs_to_functions.c)
 
 add_executable(LocalAndGlobalVariables Chapter2/local_and_global_variables.c)
+add_executable(PassByPointer Chapter2/passbypointer.c)
