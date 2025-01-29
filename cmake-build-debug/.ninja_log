@@ -1,0 +1,11 @@
+# ninja log v6
+1	159	1737952762826475690	CMakeFiles/Functions.dir/functions.c.o	647e67fa31fa06d2
+159	259	1737952762984514076	Functions	87cfcde56b49a876
+171	291	1738083783609319583	StructDemo	15fc4b7182ed7fa3
+1	34	1738033731579603315	CMakeFiles/TestArray.dir/test_array.c.o	55706d907e154fbd
+34	70	1738033731612762242	TestArray	164626f5c9242c2b
+2	171	1738083783440086038	CMakeFiles/StructDemo.dir/struct_demo.c.o	500da107ff128b51
+153	253	1738036803635514728	StringExamples	d1cc09fda9cb2eb4
+1	153	1738036803483633116	CMakeFiles/StringExamples.dir/string_examples.c.o	35a039dbfff1a899
+1	179	1738120444299100163	CMakeFiles/StructsToFunctions.dir/passing_structs_to_functions.c.o	19df73f4883a2cc4
+179	299	1738120444477441443	StructsToFunctions	7e08b19034ef0f0e
