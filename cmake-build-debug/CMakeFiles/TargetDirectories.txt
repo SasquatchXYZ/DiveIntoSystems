@@ -1,9 +1,0 @@
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/DiveIntoSystems.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/Functions.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/TestArray.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/StringExamples.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/StructDemo.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/LValuesDemo.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/StructsToFunctions.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/sasquatchxyz/CLionProjects/DiveIntoSystems/cmake-build-debug/CMakeFiles/rebuild_cache.dir
