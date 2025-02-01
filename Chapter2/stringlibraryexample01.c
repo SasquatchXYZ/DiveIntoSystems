@@ -25,5 +25,26 @@ int main()
     printf("%d:%s\n", strlen(str), str); // prints: 11:Hello There
     printf("%d:%s\n", strlen(d_str), d_str); // prints: 5:Hello
 
+    strcpy(str, "alligator");
+    strcpy(d_str, "Zebra");
+
+    ret = strcmp(str, d_str);
+    if (ret == 0)
+    {
+        printf("%s is equal to %s\n", str, d_str);
+    }
+    else if (ret < 0)
+    {
+        printf("%s is less than %s\n", str, d_str);
+    }
+    else
+    {
+        printf("%s is greater than %s\n", str, d_str); // true for these strings
+    }
+
+    ret = strncmp(str, "all", 3); // returns 0: they are equal up to the first 3 chars
+    if (ret == 0)
+        printf("The first 3 chars of '%s' are equal\n", str);
+
     return 0;
 }
