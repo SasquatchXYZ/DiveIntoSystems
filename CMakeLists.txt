@@ -38,3 +38,5 @@ add_executable(SwitchExample Chapter2/switchexample.c)
 add_executable(CommandLineArgs Chapter2/commandlineargs.c)
 add_executable(VoidThreadingExample Chapter2/voidthreadingexample.c)
 add_executable(PointerArithmetic Chapter2/pointerarith.c)
+add_library(TestLibrary Chapter2/library/mylib.h
+        Chapter2/library/mylib.c)
