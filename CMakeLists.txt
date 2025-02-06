@@ -41,3 +41,4 @@ add_executable(PointerArithmetic Chapter2/pointerarith.c)
 add_library(TestLibrary Chapter2/library/mylib.h
         Chapter2/library/mylib.c)
 add_executable(MyProg Chapter2/library/myprog.c)
+add_executable(SimpleOps Chapter2/assembly/simpleops.c)
