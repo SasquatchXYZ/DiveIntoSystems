@@ -40,3 +40,4 @@ add_executable(VoidThreadingExample Chapter2/voidthreadingexample.c)
 add_executable(PointerArithmetic Chapter2/pointerarith.c)
 add_library(TestLibrary Chapter2/library/mylib.h
         Chapter2/library/mylib.c)
+add_executable(MyProg Chapter2/library/myprog.c)
