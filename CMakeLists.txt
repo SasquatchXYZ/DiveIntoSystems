@@ -43,3 +43,4 @@ add_library(TestLibrary Chapter2/library/mylib.h
 add_executable(MyProg Chapter2/library/myprog.c)
 add_executable(SimpleOps Chapter2/assembly/simpleops.c)
 add_executable(AssemblyTestingMain Chapter2/assembly/writing/main.c)
+add_executable(BigFish Chapter3/bigfish.c)
