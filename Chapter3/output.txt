@@ -1,0 +1,335 @@
+==9665== Memcheck, a memory error detector
+==9665== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==9665== Using Valgrind-3.24.0-fcdaa47426-20241101 and LibVEX; rerun with -h for copyright info
+==9665== Command: ./a.out
+==9665== 
+--9665-- Valgrind options:
+--9665--    -v
+--9665-- Contents of /proc/version:
+--9665--   Linux version 6.9.3-76060903-generic (jenkins@warp.pop-os.org) (x86_64-linux-gnu-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #202405300957~1738770968~22.04~d5f7c84 SMP PREEMPT_DYNAMIC Wed F
+--9665-- 
+--9665-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--9665-- Page sizes: currently 4096, max supported 4096
+--9665-- Valgrind library directory: /usr/local/libexec/valgrind
+--9665-- Reading syms from /home/dalton.ricker/CLionProjects/DiveIntoSystems/Chapter3/a.out
+--9665-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--9665--   Considering /usr/lib/debug/.build-id/e4/de036b19e4768e7591b596c4be9f9015f2d28a.debug ..
+--9665--   .. build-id is valid
+--9665-- Reading syms from /usr/local/libexec/valgrind/memcheck-amd64-linux
+--9665--    object doesn't have a dynamic symbol table
+--9665-- Scheduler: using generic scheduler lock implementation.
+--9665-- Reading suppressions file: /usr/local/libexec/valgrind/default.supp
+==9665== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-9665-by-dalton.ricker-on-???
+==9665== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-9665-by-dalton.ricker-on-???
+==9665== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-9665-by-dalton.ricker-on-???
+==9665== 
+==9665== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==9665== don't want to do, unless you know exactly what you're doing,
+==9665== or are doing some strange experiment):
+==9665==   /usr/local/libexec/valgrind/../../bin/vgdb --pid=9665 ...command...
+==9665== 
+==9665== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==9665==   /path/to/gdb ./a.out
+==9665== and then give GDB the following command
+==9665==   target remote | /usr/local/libexec/valgrind/../../bin/vgdb --pid=9665
+==9665== --pid is optional if only one valgrind process is running
+==9665== 
+--9665-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c24a2 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--9665-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x580c24bc (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--9665-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580c24d7 (vgPlain_amd64_linux_REDIR_FOR_index)
+--9665-- Reading syms from /usr/local/libexec/valgrind/vgpreload_core-amd64-linux.so
+--9665-- Reading syms from /usr/local/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==9665== WARNING: new redirection conflicts with existing -- ignoring it
+--9665--     old: 0x04027220 (strcmp              ) R-> (0000.0) 0x580c24bc vgPlain_amd64_linux_REDIR_FOR_strcmp
+--9665--     new: 0x04027220 (strcmp              ) R-> (2016.0) 0x048531b0 strcmp
+==9665== WARNING: new redirection conflicts with existing -- ignoring it
+--9665--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580c24a2 vgPlain_amd64_linux_REDIR_FOR_strlen
+--9665--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04852100 strlen
+--9665-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4856b20 (mempcpy)
+--9665-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--9665--   Considering /usr/lib/debug/.build-id/cd/410b710f0f094c6832edd95931006d883af48e.debug ..
+--9665--   .. build-id is valid
+==9665== WARNING: new redirection conflicts with existing -- ignoring it
+--9665--     old: 0x04917c60 (memalign            ) R-> (1011.0) 0x04850964 memalign
+--9665--     new: 0x04917c60 (memalign            ) R-> (1017.0) 0x048511f9 aligned_alloc
+==9665== WARNING: new redirection conflicts with existing -- ignoring it
+--9665--     old: 0x04917c60 (memalign            ) R-> (1011.0) 0x04850964 memalign
+--9665--     new: 0x04917c60 (memalign            ) R-> (1017.0) 0x0485107a aligned_alloc
+==9665== WARNING: new redirection conflicts with existing -- ignoring it
+--9665--     old: 0x04917c60 (memalign            ) R-> (1011.0) 0x04850964 memalign
+--9665--     new: 0x04917c60 (memalign            ) R-> (1017.0) 0x048511f9 aligned_alloc
+==9665== WARNING: new redirection conflicts with existing -- ignoring it
+--9665--     old: 0x04917c60 (memalign            ) R-> (1011.0) 0x04850964 memalign
+--9665--     new: 0x04917c60 (memalign            ) R-> (1017.0) 0x0485107a aligned_alloc
+--9665-- REDIR: 0x491a720 (libc.so.6:strnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a9e0 (libc.so.6:strpbrk) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a2e0 (libc.so.6:strcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4938cd0 (libc.so.6:wcsnlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b6d0 (libc.so.6:memset) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4937540 (libc.so.6:wcslen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491bc10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4937370 (libc.so.6:wcschr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a260 (libc.so.6:index) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a960 (libc.so.6:rindex) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b5a0 (libc.so.6:memmove) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+==9665== Preferring higher priority redirection:
+--9665--     old: 0x04a127c0 (__memcpy_avx_unalign) R-> (2018.0) 0x04854370 __memcpy_avx_unaligned_erms
+--9665--     new: 0x04a127c0 (__memcpy_avx_unalign) R-> (2018.1) 0x04855b60 memmove
+--9665-- REDIR: 0x49373f0 (libc.so.6:wcscmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b9e0 (libc.so.6:stpncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x49379b0 (libc.so.6:wmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a830 (libc.so.6:strncmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491ba70 (libc.so.6:strcasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a420 (libc.so.6:strcspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4937470 (libc.so.6:wcscpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a1d0 (libc.so.6:strcat) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491bb60 (libc.so.6:strncasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b480 (libc.so.6:bcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4923570 (libc.so.6:memrchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491d010 (libc.so.6:strchrnul) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a390 (libc.so.6:strcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491bb10 (libc.so.6:strcasecmp_l) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a6a0 (libc.so.6:strlen) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491a8d0 (libc.so.6:strncpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4937a40 (libc.so.6:wmemcmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b950 (libc.so.6:stpcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b3f0 (libc.so.6:memchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491ab00 (libc.so.6:strspn) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491b7d0 (libc.so.6:mempcpy) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491bac0 (libc.so.6:strncasecmp) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x491cf80 (libc.so.6:rawmemchr) redirected to 0x483f1ba (_vgnU_ifunc_wrapper)
+--9665-- REDIR: 0x4a0f610 (libc.so.6:__strrchr_avx2) redirected to 0x4851970 (rindex)
+--9665-- REDIR: 0x49170a0 (libc.so.6:malloc) redirected to 0x4848799 (malloc)
+==9665== Invalid write of size 1
+==9665==    at 0x10924C: foo (valgrindbadprog.c:32)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665==  Address 0x4a9e095 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665== 
+--9665-- REDIR: 0x4a0f400 (libc.so.6:__strchrnul_avx2) redirected to 0x4856610 (strchrnul)
+--9665-- REDIR: 0x4a0f7e0 (libc.so.6:__strlen_avx2) redirected to 0x4851fe0 (strlen)
+--9665-- REDIR: 0x4a12780 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4856720 (mempcpy)
+==9665== Invalid read of size 1
+==9665==    at 0x4851FF4: strlen (vg_replace_strmem.c:505)
+==9665==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10927A: foo (valgrindbadprog.c:35)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665==  Address 0x4a9e095 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665== 
+==9665== Invalid read of size 1
+==9665==    at 0x48567A8: mempcpy (vg_replace_strmem.c:1700)
+==9665==    by 0x48FD664: _IO_new_file_xsputn (fileops.c:1235)
+==9665==    by 0x48FD664: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==9665==    by 0x48E900B: outstring_func (vfprintf-internal.c:239)
+==9665==    by 0x48E900B: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10927A: foo (valgrindbadprog.c:35)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665==  Address 0x4a9e095 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665== 
+--9665-- REDIR: 0x49173e0 (libc.so.6:free) redirected to 0x484baba (free)
+==9665== Invalid write of size 1
+==9665==    at 0x10924C: foo (valgrindbadprog.c:32)
+==9665==    by 0x109317: main (valgrindbadprog.c:55)
+==9665==  Address 0x4a9f175 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x109317: main (valgrindbadprog.c:55)
+==9665== 
+==9665== Conditional jump or move depends on uninitialised value(s)
+==9665==    at 0x4851FE9: strlen (vg_replace_strmem.c:505)
+==9665==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10927A: foo (valgrindbadprog.c:35)
+==9665==    by 0x109317: main (valgrindbadprog.c:55)
+==9665== 
+==9665== Invalid read of size 1
+==9665==    at 0x109210: foo (valgrindbadprog.c:24)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665==  Address 0x4a9f120 is 0 bytes inside a block of size 8 free'd
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x109323: main (valgrindbadprog.c:57)
+==9665==  Block was alloc'd at
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x109307: main (valgrindbadprog.c:54)
+==9665== 
+==9665== Invalid read of size 1
+==9665==    at 0x109249: foo (valgrindbadprog.c:32)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665==  Address 0x4a9f120 is 0 bytes inside a block of size 8 free'd
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x109323: main (valgrindbadprog.c:57)
+==9665==  Block was alloc'd at
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x109307: main (valgrindbadprog.c:54)
+==9665== 
+==9665== Invalid write of size 1
+==9665==    at 0x10924C: foo (valgrindbadprog.c:32)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665==  Address 0x4a9f1c5 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665== 
+==9665== Conditional jump or move depends on uninitialised value(s)
+==9665==    at 0x4851FE9: strlen (vg_replace_strmem.c:505)
+==9665==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10938F: main (valgrindbadprog.c:64)
+==9665== 
+==9665== Invalid free() / delete / delete[] / realloc()
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x1093A7: main (valgrindbadprog.c:66)
+==9665==  Address 0x4a9f260 is 0 bytes inside a block of size 8 free'd
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x10939B: main (valgrindbadprog.c:65)
+==9665==  Block was alloc'd at
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x109370: main (valgrindbadprog.c:63)
+==9665== 
+a = ssssssbbb, b = sbbb, c = ssssss
+s = ssssss
+a = , b = , c = 
+a = , b = , c = 
+s = xxxx
+s = 
+==9665== 
+==9665== HEAP SUMMARY:
+==9665==     in use at exit: 23 bytes in 4 blocks
+==9665==   total heap usage: 8 allocs, 5 frees, 4,143 bytes allocated
+==9665== 
+==9665== Searching for pointers to 4 not-freed blocks
+==9665== Checked 107,712 bytes
+==9665== 
+==9665== LEAK SUMMARY:
+==9665==    definitely lost: 23 bytes in 4 blocks
+==9665==    indirectly lost: 0 bytes in 0 blocks
+==9665==      possibly lost: 0 bytes in 0 blocks
+==9665==    still reachable: 0 bytes in 0 blocks
+==9665==         suppressed: 0 bytes in 0 blocks
+==9665== Rerun with --leak-check=full to see details of leaked memory
+==9665== 
+==9665== Use --track-origins=yes to see where uninitialised values come from
+==9665== ERROR SUMMARY: 23 errors from 10 contexts (suppressed: 0 from 0)
+==9665== 
+==9665== 1 errors in context 1 of 10:
+==9665== Invalid free() / delete / delete[] / realloc()
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x1093A7: main (valgrindbadprog.c:66)
+==9665==  Address 0x4a9f260 is 0 bytes inside a block of size 8 free'd
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x10939B: main (valgrindbadprog.c:65)
+==9665==  Block was alloc'd at
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x109370: main (valgrindbadprog.c:63)
+==9665== 
+==9665== 
+==9665== 1 errors in context 2 of 10:
+==9665== Conditional jump or move depends on uninitialised value(s)
+==9665==    at 0x4851FE9: strlen (vg_replace_strmem.c:505)
+==9665==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10938F: main (valgrindbadprog.c:64)
+==9665== 
+==9665== 
+==9665== 1 errors in context 3 of 10:
+==9665== Invalid write of size 1
+==9665==    at 0x10924C: foo (valgrindbadprog.c:32)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665==  Address 0x4a9f1c5 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665== 
+==9665== 
+==9665== 1 errors in context 4 of 10:
+==9665== Invalid write of size 1
+==9665==    at 0x10924C: foo (valgrindbadprog.c:32)
+==9665==    by 0x109317: main (valgrindbadprog.c:55)
+==9665==  Address 0x4a9f175 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x109317: main (valgrindbadprog.c:55)
+==9665== 
+==9665== 
+==9665== 1 errors in context 5 of 10:
+==9665== Invalid read of size 1
+==9665==    at 0x48567A8: mempcpy (vg_replace_strmem.c:1700)
+==9665==    by 0x48FD664: _IO_new_file_xsputn (fileops.c:1235)
+==9665==    by 0x48FD664: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==9665==    by 0x48E900B: outstring_func (vfprintf-internal.c:239)
+==9665==    by 0x48E900B: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10927A: foo (valgrindbadprog.c:35)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665==  Address 0x4a9e095 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665== 
+==9665== 
+==9665== 1 errors in context 6 of 10:
+==9665== Invalid write of size 1
+==9665==    at 0x10924C: foo (valgrindbadprog.c:32)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665==  Address 0x4a9e095 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665== 
+==9665== 
+==9665== 2 errors in context 7 of 10:
+==9665== Invalid read of size 1
+==9665==    at 0x4851FF4: strlen (vg_replace_strmem.c:505)
+==9665==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10927A: foo (valgrindbadprog.c:35)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665==  Address 0x4a9e095 is 0 bytes after a block of size 5 alloc'd
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x1091D1: foo (valgrindbadprog.c:13)
+==9665==    by 0x1092D6: main (valgrindbadprog.c:50)
+==9665== 
+==9665== 
+==9665== 3 errors in context 8 of 10:
+==9665== Conditional jump or move depends on uninitialised value(s)
+==9665==    at 0x4851FE9: strlen (vg_replace_strmem.c:505)
+==9665==    by 0x48E8D30: __vfprintf_internal (vfprintf-internal.c:1517)
+==9665==    by 0x48D279E: printf (printf.c:33)
+==9665==    by 0x10927A: foo (valgrindbadprog.c:35)
+==9665==    by 0x109317: main (valgrindbadprog.c:55)
+==9665== 
+==9665== 
+==9665== 6 errors in context 9 of 10:
+==9665== Invalid read of size 1
+==9665==    at 0x109249: foo (valgrindbadprog.c:32)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665==  Address 0x4a9f120 is 0 bytes inside a block of size 8 free'd
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x109323: main (valgrindbadprog.c:57)
+==9665==  Block was alloc'd at
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x109307: main (valgrindbadprog.c:54)
+==9665== 
+==9665== 
+==9665== 6 errors in context 10 of 10:
+==9665== Invalid read of size 1
+==9665==    at 0x109210: foo (valgrindbadprog.c:24)
+==9665==    by 0x10932F: main (valgrindbadprog.c:58)
+==9665==  Address 0x4a9f120 is 0 bytes inside a block of size 8 free'd
+==9665==    at 0x484BB2C: free (vg_replace_malloc.c:989)
+==9665==    by 0x109323: main (valgrindbadprog.c:57)
+==9665==  Block was alloc'd at
+==9665==    at 0x484880F: malloc (vg_replace_malloc.c:446)
+==9665==    by 0x109307: main (valgrindbadprog.c:54)
+==9665== 
+==9665== ERROR SUMMARY: 23 errors from 10 contexts (suppressed: 0 from 0)
