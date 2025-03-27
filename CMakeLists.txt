@@ -50,5 +50,9 @@ add_executable(RaceCondition Chapter3/racecond.c)
 add_executable(RightShift Chapter4/right_shift.c)
 add_executable(IntegerByteOrder Chapter4/integer_byte_order.c)
 add_executable(Example Chapter6/example.c)
+
 add_executable(Adder Chapter7/adder.c)
 add_executable(Prog Chapter7/prog.c)
+
+add_executable(Modified Chapter8/modified.c)
+
